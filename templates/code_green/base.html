@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <link rel="icon" href="{% static 'images/favicon.ico' %}">
+        <title>
+            Code Green - {% block title_block %} Home {% endblock %}
+        </title>
+    </head>
+
+    <body>
+        <h1>Code Green NAVBAR</h1>
+
+        <main>
+            {% block body_block %}{% endblock %}
+        </main>
+    </body>
+</html>
