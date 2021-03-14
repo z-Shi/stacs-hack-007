@@ -14,8 +14,10 @@
         {% if missions_list %}
             <div>
                 {% for mission in missions_list %}
-                    <h2>Mission Title: {{ mission.title }}</h2>
+                    <p>Mission Title: {{ mission.title }}</p>
                     <p>Mission Brief: {{ mission.brief }}</p>
+                    <p>Mission Points: {{ mission.points }}</p>
+                    <br/>
                 {% endfor %}
             </div>
         {% else %}
