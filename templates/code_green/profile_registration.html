@@ -1,0 +1,26 @@
+{% extends 'code_green/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    Register - Create Profile
+{% endblock %}
+
+{% block body_block %}
+    <div>
+        <div>
+            <h1>Register Here - Create Your Profile</h1>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <form method="post"
+                  action="{% url 'code_green:register_profile' %}"
+                  enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Create Profile">
+            </form>
+        </div>
+    </div>
+{% endblock %}
