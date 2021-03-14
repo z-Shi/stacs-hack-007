@@ -82,8 +82,25 @@ class ProfileView(View):
         return render(request, 'code_green/profile.html', context_dict)
 
 
+class AboutView(View):
+    def get(self, request):
+        return render(request, 'code_green/about.html', {})
+
+
 class MissionsView(View):
     @method_decorator(login_required)
     def get(self, request):
         missions = Mission.objects.all()
         return render(request, 'code_green/missions.html', {'missions_list': missions})
+
+
+class CommunityView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        return render(request, 'code_green/community.html', {})
+
+
+class LeaderboardView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        return render(request, 'code_green/leaderboard.html', {})
