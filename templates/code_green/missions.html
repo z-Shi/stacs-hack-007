@@ -1,0 +1,27 @@
+{% extends 'code_green/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    Missions
+{% endblock %}
+
+{% block body_block %}
+    <div class="container">
+        <h1>Missions</h1>
+    </div>
+
+    <div>
+        {% if missions_list %}
+            <div>
+                {% for mission in missions_list %}
+                    <h2>Mission Title: {{ mission.title }}</h2>
+                    <p>Mission Brief: {{ mission.brief }}</p>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div>
+                There are no available missions.
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.urls import reverse
 from code_green.forms import UserProfileForm
-from code_green.models import UserProfile
+from code_green.models import UserProfile, Mission
 
 
 class IndexView(View):
@@ -80,3 +80,10 @@ class ProfileView(View):
                         'form': form}
 
         return render(request, 'code_green/profile.html', context_dict)
+
+
+class MissionsView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        missions = Mission.objects.all()
+        return render(request, 'code_green/missions.html', {'missions_list': missions})
